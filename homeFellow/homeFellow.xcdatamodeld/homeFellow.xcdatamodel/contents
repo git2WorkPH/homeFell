@@ -7,7 +7,7 @@
         <attribute name="latitude" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="locationdescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="longtitude" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="schedule" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="schedule" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Hf_details" positionX="-25839" positionY="-15804" width="128" height="148"/>

@@ -23,7 +23,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     
         tableView.delegate = self
         tableView.dataSource = self
-    
+        generateTestData()
         attemptFetch()
     }
 
@@ -64,12 +64,13 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         return 150
     }
     
+    
     func attemptFetch(){
     
         let fetchRequest: NSFetchRequest<Hf_details> = Hf_details.fetchRequest()
         //by default the sorting is based on the newest (date created)
-        let dateSort = NSSortDescriptor(key: "created", ascending: false)
-        fetchRequest.sortDescriptors = [dateSort]
+        let hostSort = NSSortDescriptor(key: "hosts", ascending: false)
+        fetchRequest.sortDescriptors = [hostSort]
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
@@ -128,9 +129,57 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     }
     
     
+    func generateTestData() {
+    
+        let item = Hf_details(context: context)
+        
+        item.hosts = "Juan Dela Cruz"
+        item.schedule = "Monday 8pm"
+        item.homeaddress = "198 Road Edge Villa Amada, Pulang-tubig, Dumaguete City"
+        item.longtitude = Int64(123.29283223)
+        item.latitude = Int64(9.3232727)
+        item.locationdescription = "Take the City Mall road going to villa amada. You will pass by a guard house just go straight until reaching the dead end then turn left. First house with 198 number in the gate."
+        
+        let item1 = Hf_details(context: context)
+        
+        item1.hosts = "Bart Simpson"
+        item1.schedule = "Tuesday 8pm"
+        item1.homeaddress = "Laguna Silliman, Dumaguete City"
+        item1.longtitude = Int64(123.30518648)
+        item1.latitude = Int64(9.31559167)
+        item1.locationdescription = "Take the laguna Silliman gate then go straight before reaching tempura ni Bossing."
+        
+        let item2 = Hf_details(context: context)
+        
+        item2.hosts = "Jun Manontok"
+        item2.schedule = "Friday 7pm"
+        item2.homeaddress = "San Jose Ext. Dumaguete City"
+        item2.longtitude = Int64(123.3021006)
+        item2.latitude = Int64(9.31655512)
+        item2.locationdescription = "Beside Apin's Inasal Infront Robinsons Builder."
+        
+        let item3 = Hf_details(context: context)
+        
+        item3.hosts = "Rubin Rapido"
+        item3.schedule = "Wednesday 7pm"
+        item3.homeaddress = "Silliman Avenue, Dumaguete City"
+        item3.longtitude = Int64(123.3021006)
+        item3.latitude = Int64(9.31655512)
+        item3.locationdescription = "Inside Portal West Bldg"
+        
+        let item4 = Hf_details(context: context)
+        
+        item4.hosts = "Jose Escuto"
+        item4.schedule = "Saturday 9pm"
+        item4.homeaddress = " Daro, Dumaguete City"
+        item4.longtitude = Int64(123.3021006)
+        item4.latitude = Int64(9.31655512)
+        item4.locationdescription = "Shell"
+        
+        
+        
+    }
     
     
-    
-
 }
 

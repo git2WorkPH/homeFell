@@ -19,7 +19,7 @@ class hfdetailcell: UITableViewCell {
     func configureCell(details: Hf_details){
         
         hosts.text = details.hosts
-        schedule.text = "\(String(describing: details.schedule))"
+        schedule.text = details.schedule
         address.text = details.homeaddress
         
     }

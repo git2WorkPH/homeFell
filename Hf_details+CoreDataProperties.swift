@@ -17,11 +17,11 @@ extension Hf_details {
     }
 
     @NSManaged public var created: NSDate?
+    @NSManaged public var homeaddress: String?
     @NSManaged public var hosts: String?
     @NSManaged public var latitude: Int64
-    @NSManaged public var longtitude: Int64
-    @NSManaged public var homeaddress: String?
     @NSManaged public var locationdescription: String?
-    @NSManaged public var schedule: NSDate?
+    @NSManaged public var longtitude: Int64
+    @NSManaged public var schedule: String?
 
 }
