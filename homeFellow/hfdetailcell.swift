@@ -16,5 +16,12 @@ class hfdetailcell: UITableViewCell {
     @IBOutlet weak var schedule: UILabel!
     @IBOutlet weak var address: UILabel!
     
+    func configureCell(details: Hf_details){
+        
+        hosts.text = details.hosts
+        schedule.text = "\(String(describing: details.schedule))"
+        address.text = details.homeaddress
+        
+    }
     
 }
