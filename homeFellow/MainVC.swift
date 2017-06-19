@@ -40,7 +40,27 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         let item = controller.object(at: indexPath as IndexPath)
         cell.configureCell(details: item)
     }
-
+    
+    //this function
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let objs = controller.fetchedObjects , objs.count > 0 {
+        
+            let item = objs[indexPath.row]
+            performSegue(withIdentifier: "hfdetailsVC", sender: item)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "hfdetailsVC" {
+            if let destination = segue.destination as? hfdetailsVC{
+                if let item = sender as? Hf_details{
+                    destination.itemtoEdit = item
+                }
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
      
         if let sections = controller.sections{

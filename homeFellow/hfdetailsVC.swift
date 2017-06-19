@@ -18,6 +18,7 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var longtitude: UITextField!
     @IBOutlet weak var latitude: UITextField!
     
+    var itemtoEdit: Hf_details?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,11 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate {
         if let topItem = self.navigationController?.navigationBar.topItem{
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
+        
+        if itemtoEdit != nil{
+            LoadDetails()
+        }
+        
         
         //Add done button in the numeric keypad
         
@@ -58,7 +64,13 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate {
     @IBAction func savedTapped(_ sender: UIButton) {
         
         //let letters = NSCharacterSet.letters
-        let item = Hf_details(context: context)
+        var item: Hf_details
+        
+        if itemtoEdit == nil{
+            item = Hf_details(context: context)
+        }else{
+            item = itemtoEdit!
+        }
         
         if let hosts = hostname.text {
           //  if (hosts.rangeOfCharacter(from: letters) != nil){
@@ -91,6 +103,21 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate {
         
         _ =  navigationController?.popViewController(animated: true)
         
+    }
+    
+    func LoadDetails(){
+    
+        if let item = itemtoEdit {
+            
+            hostname.text = item.hosts
+            schedule.text = item.schedule
+            homeadd.text = item.homeaddress
+            locdesc.text = item.locationdescription
+            latitude.text = "\(item.latitude)"
+            longtitude.text = "\(item.longtitude)"
+            
+            
+        }
     }
     
   }
