@@ -21,7 +21,7 @@ class hfdetailcell: UITableViewCell {
         hosts.text = details.hosts
         schedule.text = details.schedule
         address.text = details.homeaddress
-        
+        thumb.image = details.toImage as? UIImage
     }
     
 }

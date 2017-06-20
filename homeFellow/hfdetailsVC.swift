@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class hfdetailsVC: UIViewController, UITextFieldDelegate {
+class hfdetailsVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     
     @IBOutlet weak var hostname: UITextField!
@@ -19,8 +19,10 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var longtitude: UITextField!
     @IBOutlet weak var latitude: UITextField!
     @IBOutlet weak var takeMeButton: UIButton!
+    @IBOutlet weak var thumbimage: UIImageView!
     
     var itemtoEdit: Hf_details?
+    var imagepicker: UIImagePickerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,8 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate {
         
         takeMeButton.isHidden = true
         
+        imagepicker = UIImagePickerController()
+        imagepicker.delegate = self
         
         if let topItem = self.navigationController?.navigationBar.topItem{
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
@@ -71,6 +75,9 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate {
         
         //let letters = NSCharacterSet.letters
         var item: Hf_details
+
+        
+        //item.toImage?.image = thumbimage.image
         
         if itemtoEdit == nil{
             item = Hf_details(context: context)
@@ -105,6 +112,8 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate {
             item.latitude = Int64((laTitude as NSString).doubleValue)
         }
         
+        item.toImage = thumbimage.image
+        
         ad.saveContext()
         
         _ =  navigationController?.popViewController(animated: true)
@@ -121,6 +130,7 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate {
             locdesc.text = item.locationdescription
             latitude.text = String(item.latitude)
             longtitude.text = String(item.longtitude)
+            thumbimage.image = item.toImage as? UIImage
             
         }
     }
@@ -138,6 +148,11 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate {
     
     //call the waze application.
     @IBAction func takeMeTapped(_ sender: UIButton) {
+        
+        //open waze with the
+        
+        // let latitude:Double = Double(self.latitude.text!)!
+        // let longitude:Double = Double(self.longtitude.text!)!
         
         var link:String = "waze://"
         let url:NSURL = NSURL(string: link)!
@@ -159,11 +174,22 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate {
         
     }
     
-        //open waze with the
-
-       // let latitude:Double = Double(self.latitude.text!)!
-       // let longitude:Double = Double(self.longtitude.text!)!
+    
+    @IBAction func addImageTapp(_ sender: UIButton) {
+        present(imagepicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
+        if let img = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            thumbimage.image = img
+        }
+        
+        imagepicker.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
        
         
   }

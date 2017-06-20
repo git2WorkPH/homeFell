@@ -33,6 +33,9 @@
                                     <segment title="Schedule"/>
                                 </segments>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="SegmentItemChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="QCR-Ny-kvU"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VvK-io-fgV">
                                 <rect key="frame" x="16" y="132" width="343" height="535"/>
@@ -164,7 +167,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kvU-jk-YOc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kvU-jk-YOc">
                                 <rect key="frame" x="16" y="72" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="XVN-2K-eh3"/>
@@ -173,6 +176,9 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7E-2b-9Mw">
                                 <rect key="frame" x="51" y="107" width="30" height="30"/>
+                                <connections>
+                                    <action selector="addImageTapp:" destination="ZOp-2o-K6S" eventType="touchUpInside" id="79D-zR-5jT"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hosts Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="opD-CD-Rui">
                                 <rect key="frame" x="124" y="82" width="235" height="40"/>
@@ -304,6 +310,7 @@
                         <outlet property="longtitude" destination="cDe-H2-6Ys" id="578-dP-okd"/>
                         <outlet property="schedule" destination="Obz-d4-79U" id="yN8-yA-hBL"/>
                         <outlet property="takeMeButton" destination="CWT-Zo-qia" id="PMO-XQ-xjG"/>
+                        <outlet property="thumbimage" destination="kvU-jk-YOc" id="EAb-Ze-nyI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1K-Xm-MXq" userLabel="First Responder" sceneMemberID="firstResponder"/>

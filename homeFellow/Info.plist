@@ -45,5 +45,7 @@
 	<array>
 		<string>waze</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Browse Photo</string>
 </dict>
 </plist>

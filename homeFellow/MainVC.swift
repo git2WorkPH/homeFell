@@ -90,9 +90,19 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         let fetchRequest: NSFetchRequest<Hf_details> = Hf_details.fetchRequest()
         //by default the sorting is based on the newest (date created)
         let hostSort = NSSortDescriptor(key: "hosts", ascending: false)
-        fetchRequest.sortDescriptors = [hostSort]
+        let addressSort = NSSortDescriptor(key: "homeaddress", ascending: true)
+        let scheduleSort = NSSortDescriptor(key: "schedule", ascending: true)
         
+        if segment.selectedSegmentIndex == 0 {
+            fetchRequest.sortDescriptors = [hostSort]
+        }else if segment.selectedSegmentIndex == 1 {
+            fetchRequest.sortDescriptors = [addressSort]
+        }else if segment.selectedSegmentIndex == 2 {
+            fetchRequest.sortDescriptors = [scheduleSort]
+        }
+
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
         
         controller.delegate = self
         self.controller = controller
@@ -109,6 +119,12 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     }
     
     
+    @IBAction func SegmentItemChanged(_ sender: Any) {
+        
+        attemptFetch()
+        tableView.reloadData()
+    }
+   
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         
