@@ -160,7 +160,7 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate, UIImagePickerControlle
         
         if UIApplication.shared.openURL(url as URL) {
   
-            let urlStr = "waze://?q=\(address)"
+            let urlStr: NSString = NSString(format: "waze://?q=<address search term>",address!)
             print(urlStr)
             UIApplication.shared.openURL(NSURL(string: urlStr as String)! as URL)
             UIApplication.shared.isIdleTimerDisabled = true
