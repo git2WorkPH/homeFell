@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class hfdetailsVC: UIViewController, UITextFieldDelegate {
 
@@ -17,6 +18,7 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var locdesc: UITextField!
     @IBOutlet weak var longtitude: UITextField!
     @IBOutlet weak var latitude: UITextField!
+    @IBOutlet weak var takeMeButton: UIButton!
     
     var itemtoEdit: Hf_details?
     
@@ -29,12 +31,16 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate {
         longtitude.delegate = self
         latitude.delegate = self
         
+        takeMeButton.isHidden = true
+        
+        
         if let topItem = self.navigationController?.navigationBar.topItem{
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
         
         if itemtoEdit != nil{
             LoadDetails()
+            takeMeButton.isHidden = false
         }
         
         
@@ -92,11 +98,11 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate {
         }
         
         if let longTitude = longtitude.text {
-            item.longtitude = Int64((longTitude as NSString).integerValue)
+            item.longtitude = Int64((longTitude as NSString).doubleValue)
         }
         
         if let laTitude = latitude.text {
-            item.latitude = Int64((laTitude as NSString).integerValue)
+            item.latitude = Int64((laTitude as NSString).doubleValue)
         }
         
         ad.saveContext()
@@ -106,18 +112,58 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate {
     }
     
     func LoadDetails(){
-    
+        
         if let item = itemtoEdit {
             
             hostname.text = item.hosts
             schedule.text = item.schedule
             homeadd.text = item.homeaddress
             locdesc.text = item.locationdescription
-            latitude.text = "\(item.latitude)"
-            longtitude.text = "\(item.longtitude)"
-            
+            latitude.text = String(item.latitude)
+            longtitude.text = String(item.longtitude)
             
         }
     }
     
+    @IBAction func deleteTapped(_ sender: UIBarButtonItem) {
+        
+        if itemtoEdit != nil {
+            context.delete(itemtoEdit!)
+            ad.saveContext()
+        }
+        
+        _ = navigationController?.popViewController(animated: true)
+    }
+
+    
+    //call the waze application.
+    @IBAction func takeMeTapped(_ sender: UIButton) {
+        
+        var link:String = "waze://"
+        let url:NSURL = NSURL(string: link)!
+        let address = homeadd.text
+        
+        if UIApplication.shared.openURL(url as URL) {
+  
+            let urlStr = "waze://?q=\(address)"
+            print(urlStr)
+            UIApplication.shared.openURL(NSURL(string: urlStr as String)! as URL)
+            UIApplication.shared.isIdleTimerDisabled = true
+            
+            
+        } else {
+            link = "http://itunes.apple.com/us/app/id323229106"
+            UIApplication.shared.openURL(NSURL(string: link)! as URL)
+            UIApplication.shared.isIdleTimerDisabled = true
+        }
+        
+    }
+    
+        //open waze with the
+
+       // let latitude:Double = Double(self.latitude.text!)!
+       // let longitude:Double = Double(self.longtitude.text!)!
+        
+       
+        
   }

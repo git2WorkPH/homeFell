@@ -245,6 +245,17 @@
                                     <action selector="savedTapped:" destination="ZOp-2o-K6S" eventType="touchUpInside" id="vnK-jd-WBC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWT-Zo-qia">
+                                <rect key="frame" x="16" y="380" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Take Me!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takeMeTapped:" destination="ZOp-2o-K6S" eventType="touchUpInside" id="Z8L-nM-3Pe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -279,6 +290,9 @@
                     <navigationItem key="navigationItem" title="Add / Edit" id="k6l-6d-4GS">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="dB7-zO-lYp">
                             <color key="tintColor" red="1" green="0.28645470636513071" blue="0.13668039906903584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="deleteTapped:" destination="ZOp-2o-K6S" id="pH2-vE-X3I"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -289,6 +303,7 @@
                         <outlet property="locdesc" destination="8ne-jC-ih2" id="eFZ-EF-jFD"/>
                         <outlet property="longtitude" destination="cDe-H2-6Ys" id="578-dP-okd"/>
                         <outlet property="schedule" destination="Obz-d4-79U" id="yN8-yA-hBL"/>
+                        <outlet property="takeMeButton" destination="CWT-Zo-qia" id="PMO-XQ-xjG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1K-Xm-MXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
