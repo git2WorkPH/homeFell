@@ -251,9 +251,8 @@
                                     <action selector="savedTapped:" destination="ZOp-2o-K6S" eventType="touchUpInside" id="vnK-jd-WBC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWT-Zo-qia">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWT-Zo-qia">
                                 <rect key="frame" x="16" y="380" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Take Me!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -269,8 +268,11 @@
                             <constraint firstItem="z7E-2b-9Mw" firstAttribute="centerY" secondItem="kvU-jk-YOc" secondAttribute="centerY" id="3Qj-P7-Irb"/>
                             <constraint firstItem="JCR-uC-8KS" firstAttribute="top" secondItem="cDe-H2-6Ys" secondAttribute="bottom" constant="10" id="5Eo-mQ-2Tc"/>
                             <constraint firstItem="8ne-jC-ih2" firstAttribute="leading" secondItem="fyu-fp-cZf" secondAttribute="leadingMargin" id="5gg-hP-zSH"/>
+                            <constraint firstItem="CWT-Zo-qia" firstAttribute="leading" secondItem="fyu-fp-cZf" secondAttribute="leadingMargin" id="6OG-mD-4zO"/>
+                            <constraint firstItem="CWT-Zo-qia" firstAttribute="trailing" secondItem="fyu-fp-cZf" secondAttribute="trailingMargin" id="70R-S2-1hN"/>
                             <constraint firstItem="kvU-jk-YOc" firstAttribute="leading" secondItem="fyu-fp-cZf" secondAttribute="leadingMargin" id="9nT-I6-kvx"/>
                             <constraint firstItem="8ne-jC-ih2" firstAttribute="top" secondItem="Ee2-an-xmJ" secondAttribute="bottom" constant="10" id="BJa-17-6md"/>
+                            <constraint firstItem="CWT-Zo-qia" firstAttribute="trailing" secondItem="fyu-fp-cZf" secondAttribute="trailingMargin" id="EXb-FJ-Sbv"/>
                             <constraint firstItem="Ee2-an-xmJ" firstAttribute="top" secondItem="Obz-d4-79U" secondAttribute="bottom" constant="10" id="H2l-d6-MoN"/>
                             <constraint firstItem="kvU-jk-YOc" firstAttribute="top" secondItem="N8t-yc-t99" secondAttribute="bottom" constant="8" id="IYX-Xw-JCh"/>
                             <constraint firstItem="ptq-pM-SJm" firstAttribute="leading" secondItem="fyu-fp-cZf" secondAttribute="leadingMargin" id="Ifx-Ab-8QE"/>
@@ -280,6 +282,7 @@
                             <constraint firstItem="Obz-d4-79U" firstAttribute="top" secondItem="opD-CD-Rui" secondAttribute="bottom" constant="10" id="a3C-Wa-wWk"/>
                             <constraint firstItem="ptq-pM-SJm" firstAttribute="trailing" secondItem="fyu-fp-cZf" secondAttribute="trailingMargin" id="aoP-gj-1ot"/>
                             <constraint firstItem="opD-CD-Rui" firstAttribute="leading" secondItem="kvU-jk-YOc" secondAttribute="trailing" constant="8" id="bRt-QV-GBJ"/>
+                            <constraint firstItem="CWT-Zo-qia" firstAttribute="top" secondItem="JCR-uC-8KS" secondAttribute="bottom" constant="8" id="c4o-xi-ChE"/>
                             <constraint firstItem="opD-CD-Rui" firstAttribute="trailing" secondItem="fyu-fp-cZf" secondAttribute="trailingMargin" id="cwD-xq-vN7"/>
                             <constraint firstItem="rAk-8Q-7Va" firstAttribute="top" secondItem="ptq-pM-SJm" secondAttribute="bottom" constant="20" id="dht-pM-Enm"/>
                             <constraint firstItem="Obz-d4-79U" firstAttribute="trailing" secondItem="fyu-fp-cZf" secondAttribute="trailingMargin" id="hj8-eF-cjg"/>
