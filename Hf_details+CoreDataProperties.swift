@@ -2,7 +2,7 @@
 //  Hf_details+CoreDataProperties.swift
 //  homeFellow
 //
-//  Created by christopher alphonse cervantes on 6/20/17.
+//  Created by christopher alphonse cervantes on 6/21/17.
 //  Copyright © 2017 christopher alphonse cervantes. All rights reserved.
 //
 
@@ -19,9 +19,9 @@ extension Hf_details {
     @NSManaged public var created: NSDate?
     @NSManaged public var homeaddress: String?
     @NSManaged public var hosts: String?
-    @NSManaged public var latitude: Int64
+    @NSManaged public var latitude: Double
     @NSManaged public var locationdescription: String?
-    @NSManaged public var longtitude: Int64
+    @NSManaged public var longtitude: Double
     @NSManaged public var schedule: String?
     @NSManaged public var toImage: NSObject?
 

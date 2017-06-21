@@ -254,11 +254,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWT-Zo-qia">
                                 <rect key="frame" x="16" y="380" width="343" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Take Me!">
+                                <state key="normal" title="Get Direction">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="takeMeTapped:" destination="ZOp-2o-K6S" eventType="touchUpInside" id="Z8L-nM-3Pe"/>
+                                    <segue destination="iEb-MF-GaX" kind="show" identifier="getDirectionVC" id="Qai-Bf-WaU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -319,6 +320,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1K-Xm-MXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1645.5999999999999" y="776.76161919040487"/>
+        </scene>
+        <!--Get DirectionVC-->
+        <scene sceneID="kOJ-dk-hgH">
+            <objects>
+                <viewController storyboardIdentifier="getDirectionVC" id="iEb-MF-GaX" customClass="getDirectionVC" customModule="homeFellow" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gtF-XP-kP9"/>
+                        <viewControllerLayoutGuide type="bottom" id="D6H-2r-Dn9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ObA-hK-t77">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uDe-QS-2Du">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="468"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="D6H-2r-Dn9" firstAttribute="top" secondItem="uDe-QS-2Du" secondAttribute="bottom" constant="155" id="1Nc-pX-LQg"/>
+                            <constraint firstAttribute="trailing" secondItem="uDe-QS-2Du" secondAttribute="trailing" id="bS2-Qn-Lbl"/>
+                            <constraint firstItem="uDe-QS-2Du" firstAttribute="leading" secondItem="ObA-hK-t77" secondAttribute="leading" id="nxp-k0-j6m"/>
+                            <constraint firstItem="uDe-QS-2Du" firstAttribute="top" secondItem="ObA-hK-t77" secondAttribute="top" id="tmL-fc-6Ut"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AYb-Mf-TIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2317.5999999999999" y="776.76161919040487"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Y9-gO-C7s">

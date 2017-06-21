@@ -2,4 +2,162 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "homeFellow/getDirectionVC.swift"
+            timestampString = "519754221.304813"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "getDirectionVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "homeFellow.getDirectionVC.myMap.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.MKMapView&gt;"
+                  moduleName = "homeFellow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iStand4JC/DevStuff/_ioscode/homeFellow/homeFellow/getDirectionVC.swift"
+                  timestampString = "519755301.171847"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "homeFellow.getDirectionVC.myMap.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.MKMapView&gt;"
+                  moduleName = "homeFellow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iStand4JC/DevStuff/_ioscode/homeFellow/homeFellow/getDirectionVC.swift"
+                  timestampString = "519755301.17318"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "homeFellow.getDirectionVC.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; homeFellow.getDirectionVC"
+                  moduleName = "homeFellow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iStand4JC/DevStuff/_ioscode/homeFellow/homeFellow/getDirectionVC.swift"
+                  timestampString = "519755301.174521"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "homeFellow.getDirectionVC.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;homeFellow.getDirectionVC&gt;"
+                  moduleName = "homeFellow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iStand4JC/DevStuff/_ioscode/homeFellow/homeFellow/getDirectionVC.swift"
+                  timestampString = "519755301.177375"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "homeFellow/getDirectionVC.swift"
+            timestampString = "519754556.896447"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "getDirectionVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "homeFellow.getDirectionVC.myMap.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.MKMapView&gt;"
+                  moduleName = "homeFellow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iStand4JC/DevStuff/_ioscode/homeFellow/homeFellow/getDirectionVC.swift"
+                  timestampString = "519755301.19556"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "homeFellow.getDirectionVC.myMap.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.MKMapView&gt;"
+                  moduleName = "homeFellow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iStand4JC/DevStuff/_ioscode/homeFellow/homeFellow/getDirectionVC.swift"
+                  timestampString = "519755301.200512"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "homeFellow.getDirectionVC.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; homeFellow.getDirectionVC"
+                  moduleName = "homeFellow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iStand4JC/DevStuff/_ioscode/homeFellow/homeFellow/getDirectionVC.swift"
+                  timestampString = "519755301.203419"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "homeFellow.getDirectionVC.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;homeFellow.getDirectionVC&gt;"
+                  moduleName = "homeFellow"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iStand4JC/DevStuff/_ioscode/homeFellow/homeFellow/getDirectionVC.swift"
+                  timestampString = "519755301.204731"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

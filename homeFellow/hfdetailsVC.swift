@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import CoreLocation
 
-class hfdetailsVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
+class hfdetailsVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    
     
     @IBOutlet weak var hostname: UITextField!
     @IBOutlet weak var schedule: UITextField!
@@ -26,6 +26,7 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate, UIImagePickerControlle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         hostname.delegate = self
         schedule.delegate = self
         homeadd.delegate = self
@@ -37,6 +38,7 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate, UIImagePickerControlle
         
         imagepicker = UIImagePickerController()
         imagepicker.delegate = self
+        
         
         if let topItem = self.navigationController?.navigationBar.topItem{
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
@@ -105,11 +107,11 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate, UIImagePickerControlle
         }
         
         if let longTitude = longtitude.text {
-            item.longtitude = Int64((longTitude as NSString).doubleValue)
+            item.longtitude = Double(longTitude)!
         }
         
         if let laTitude = latitude.text {
-            item.latitude = Int64((laTitude as NSString).doubleValue)
+            item.latitude = Double(laTitude)!
         }
         
         item.toImage = thumbimage.image
@@ -119,6 +121,10 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate, UIImagePickerControlle
         _ =  navigationController?.popViewController(animated: true)
         
     }
+    
+   // func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+   //     let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+    //}
     
     func LoadDetails(){
         
@@ -145,14 +151,20 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate, UIImagePickerControlle
         _ = navigationController?.popViewController(animated: true)
     }
 
-    
+
     //call the waze application.
     @IBAction func takeMeTapped(_ sender: UIButton) {
         
+      /*  let MyData = storyboard?.instantiateViewController(withIdentifier: "getDirectionVC") as! getDirectionVC
+        MyData.Latitude = Double((latitude.text! as NSString).doubleValue)
+        MyData.Longtitude = Double((longtitude.text! as NSString).doubleValue)
+        
+        navigationController?.pushViewController(MyData, animated: true)
+        performSegue(withIdentifier: "getDirectionVC", sender: MyData)*/
         //open waze with the
         
-        // let latitude:Double = Double(self.latitude.text!)!
-        // let longitude:Double = Double(self.longtitude.text!)!
+       /*  let latitude:Double = Double(self.latitude.text!)!
+         let longitude:Double = Double(longtitude.text!)!
         
         var link:String = "waze://"
         let url:NSURL = NSURL(string: link)!
@@ -160,7 +172,8 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate, UIImagePickerControlle
         
         if UIApplication.shared.openURL(url as URL) {
   
-            let urlStr: NSString = NSString(format: "waze://?q=<address search term>",address!)
+            var urlStr:NSString = NSString(format: "waze://?ll=%f,%f&navigate=yes",latitude, longitude)
+
             print(urlStr)
             UIApplication.shared.openURL(NSURL(string: urlStr as String)! as URL)
             UIApplication.shared.isIdleTimerDisabled = true
@@ -170,10 +183,19 @@ class hfdetailsVC: UIViewController, UITextFieldDelegate, UIImagePickerControlle
             link = "http://itunes.apple.com/us/app/id323229106"
             UIApplication.shared.openURL(NSURL(string: link)! as URL)
             UIApplication.shared.isIdleTimerDisabled = true
-        }
+        }*/
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "getDirectionVC"{
+            let direction = segue.destination as? getDirectionVC
+            direction?.Latitude = Double(latitude.text!)!
+            direction?.Longtitude = Double(longtitude.text!)!
+            print("Pass \(String(describing: direction?.Latitude))")
+            print("Pass \(direction?.Longtitude ?? nil)")
+        }
+    }
     
     @IBAction func addImageTapp(_ sender: UIButton) {
         present(imagepicker, animated: true, completion: nil)

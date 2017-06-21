@@ -41,7 +41,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         cell.configureCell(details: item)
     }
     
-    //this function
+    //this function will call the hfdetailsVC or the add/edit screen
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let objs = controller.fetchedObjects , objs.count > 0 {
@@ -51,6 +51,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         }
     }
     
+    //this will send the data to the hfdetailsVC or the add/edit screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "hfdetailsVC" {
             if let destination = segue.destination as? hfdetailsVC{
@@ -173,8 +174,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         item.hosts = "Juan Dela Cruz"
         item.schedule = "Monday 8pm"
         item.homeaddress = "198 Road Edge Villa Amada, Pulang-tubig, Dumaguete City"
-        item.longtitude = Int64(123.29283223)
-        item.latitude = Int64(9.3232727)
+        item.longtitude = 123.29283223
+        item.latitude = 9.3232727
         item.locationdescription = "Take the City Mall road going to villa amada. You will pass by a guard house just go straight until reaching the dead end then turn left. First house with 198 number in the gate."
         
         let item1 = Hf_details(context: context)
@@ -182,8 +183,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         item1.hosts = "Bart Simpson"
         item1.schedule = "Tuesday 8pm"
         item1.homeaddress = "Laguna Silliman, Dumaguete City"
-        item1.longtitude = Int64(123.30518648)
-        item1.latitude = Int64(9.31559167)
+        item1.longtitude = 123.30518648
+        item1.latitude = 9.31559167
         item1.locationdescription = "Take the laguna Silliman gate then go straight before reaching tempura ni Bossing."
         
         let item2 = Hf_details(context: context)
@@ -191,8 +192,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         item2.hosts = "Jun Manontok"
         item2.schedule = "Friday 7pm"
         item2.homeaddress = "San Jose Ext. Dumaguete City"
-        item2.longtitude = Int64(123.3021006)
-        item2.latitude = Int64(9.31655512)
+        item2.longtitude = 123.3021006
+        item2.latitude = 9.31655512
         item2.locationdescription = "Beside Apin's Inasal Infront Robinsons Builder."
         
         let item3 = Hf_details(context: context)
@@ -200,8 +201,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         item3.hosts = "Rubin Rapido"
         item3.schedule = "Wednesday 7pm"
         item3.homeaddress = "Silliman Avenue, Dumaguete City"
-        item3.longtitude = Int64(123.3021006)
-        item3.latitude = Int64(9.31655512)
+        item3.longtitude = 123.3021006
+        item3.latitude = 9.31655512
         item3.locationdescription = "Inside Portal West Bldg"
         
         let item4 = Hf_details(context: context)
@@ -209,8 +210,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         item4.hosts = "Jose Escuto"
         item4.schedule = "Saturday 9pm"
         item4.homeaddress = " Daro, Dumaguete City"
-        item4.longtitude = Int64(123.3021006)
-        item4.latitude = Int64(9.31655512)
+        item4.longtitude = 123.3021006
+        item4.latitude = 9.31655512
         item4.locationdescription = "Shell"
         
         
